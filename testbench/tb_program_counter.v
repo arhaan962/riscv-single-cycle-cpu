@@ -29,14 +29,12 @@ module tb_program_counter;
         // First rising edge: reset PC to zero
         #10;
         reset = 0;
-        next_pc = 4;
-
-        // Next rising edge: PC becomes 4
+        for(int i=0;i<4;i=i+1)begin
+        next_pc = (i+1) * 4;
         #10;
-        next_pc = 8;
+        end
 
-        // Next rising edge: PC becomes 8
-        #10;
+      
 
         $display("Final PC = %0d", pc);
         $finish;
