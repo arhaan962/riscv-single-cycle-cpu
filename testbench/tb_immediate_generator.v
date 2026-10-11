@@ -107,10 +107,14 @@ module tb_immediate_generator;
             $display("PASS U-type: %h", immediate);
 
         // J-type: JAL with jump offset -4
-        instruction = {
-            1'b1, 8'hFF, 1'b1, 10'b1111111110,
-            5'd1, 7'b1101111
-        };
+       instruction = {
+    1'b1,                 // instruction[31]
+    10'b1111111110,       // instruction[30:21]
+    1'b1,                 // instruction[20]
+    8'hFF,                // instruction[19:12]
+    5'd1,                 // rd
+    7'b1101111            // JAL opcode
+};
         imm_src = 3'b100;
         #1;
         if (immediate !== 32'hFFFFFFFC)
