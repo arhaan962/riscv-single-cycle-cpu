@@ -50,7 +50,7 @@ The testbench displays the program counter, current instruction, register file, 
 
 ```text
 src/                  CPU and component modules
-testbench/tb_riscv_cpu.v
+testbench/
                       Simulation testbench
 ```
 
